@@ -1,0 +1,26 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "io.ratpack:ratpack-gradle:0.9.5"
+  }
+}
+
+apply plugin: "ratpack-groovy"
+apply plugin: "idea"
+apply plugin: "eclipse"
+
+repositories {
+  jcenter()
+  maven { url "http://repo.springsource.org/repo" } // for springloaded
+}
+
+dependencies {
+  // SpringLoaded enables runtime hot reloading.
+  // It is not part of the app runtime and is not shipped in the distribution.
+  springloaded "org.springsource.loaded:springloaded:1.1.5.RELEASE"
+  groovy group:"com.lowagie", name:"itext", version:"4.2.1"
+
+  testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+}
