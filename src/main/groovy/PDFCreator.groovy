@@ -2,11 +2,11 @@
 
 class PDFCreator
 {
-    static def fontsDir = "/Users/adria/Developer/composer/fonts"
+    static def fontsDir = "../resources/fonts"
 
     static public ArrayList getFonts()
     {
-        def allFiles = new File(fontsDir).listFiles();
+        def allFiles = new File(fontsDir).listFiles()
         def fontFileNames = []
         for (file in allFiles)
         {
@@ -15,7 +15,7 @@ class PDFCreator
                 fontFileNames.add(file.name);
             }
         }
-        return fontFileNames;   
+        return fontFileNames   
     }  
 
 
